@@ -56,11 +56,13 @@ while True:
     if pad is None:
         pad = 255 *np.ones_like(frame)
 
-    #finding centroid of contour if area is greater than 100
-    if contours and cv2.contourArea(max(contours, key=cv2.contourArea)) > 100:
+    #findind centroid of contour
+    try:
         M = cv2.moments(mask)
         x2 = int(M['m10']/M['m00'])
         y2 = int(M['m01']/M['m00'])
+    except:
+        continue
 
     if x1 == 0 and y1 == 0:
         x1, y1 = x2, y2
