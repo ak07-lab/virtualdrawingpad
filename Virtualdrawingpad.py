@@ -8,12 +8,12 @@ cap = cv2.VideoCapture(0)
 
 #creating trackbar for finding threshold for mask
 cv2.namedWindow('trackbar', 0)
-cv2.createTrackbar('lowerh', 'trackbar', 80, 255, nothing)
-cv2.createTrackbar('lowers', 'trackbar', 140, 255, nothing)
-cv2.createTrackbar('lowerv', 'trackbar', 55, 255, nothing)
-cv2.createTrackbar('upperh', 'trackbar', 190, 255, nothing)
-cv2.createTrackbar('uppers', 'trackbar', 255, 255, nothing)
-cv2.createTrackbar('upperv', 'trackbar', 255, 255, nothing)
+cv2.createTrackbar('lowerh', 'trackbar', 0, 255, nothing)
+cv2.createTrackbar('lowers', 'trackbar', 0, 255, nothing)
+cv2.createTrackbar('lowerv', 'trackbar', 0, 255, nothing)
+cv2.createTrackbar('upperh', 'trackbar', 0, 255, nothing)
+cv2.createTrackbar('uppers', 'trackbar', 0, 255, nothing)
+cv2.createTrackbar('upperv', 'trackbar', 0, 255, nothing)
 
 #creating a pad
 pad = None
