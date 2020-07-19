@@ -19,7 +19,7 @@ cv2.createTrackbar('upperv', 'trackbar', 0, 255, nothing)
 pad = None
 
 #switching between marker and eraser
-val = 1
+switch = 1
 
 #intial position of marker
 x1, y1 = 0, 0
@@ -67,10 +67,10 @@ while True:
     if x1 == 0 and y1 == 0:
         x1, y1 = x2, y2
     else:
-        if val == 1:
+        if switch == 1:
             pad = cv2.line(pad, (x1,y1), (x2,y2), (0, 0, 255) , 3)
         else:
-            pad = cv2.line(pad, (x1, y1), (x2, y2), (255, 255, 255), 3)
+            pad = cv2.circle(pad, (x2, y2), 50, (255, 255, 255), -1)
 
     x1,y1 = x2,y2
 
@@ -87,7 +87,11 @@ while True:
 
     #to convert marker into eraser
     elif cv2.waitKey(1) == ord('e'):
-        val = not(val)
+        switch = 0
+        
+    #to convert again into marker
+    elif cv2.waitKey(1) == ord('m'):
+        switch = 1
 
     #to clear the pad
     elif cv2.waitKey(1) == ord('c'):
