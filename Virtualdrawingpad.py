@@ -7,7 +7,7 @@ def nothing(x):
 cap = cv2.VideoCapture(0)
 
 #creating trackbar for finding threshold for mask
-cv2.namedWindow('trackbar', 0)
+cv2.namedWindow('trackbar')
 cv2.createTrackbar('lowerh', 'trackbar', 0, 255, nothing)
 cv2.createTrackbar('lowers', 'trackbar', 0, 255, nothing)
 cv2.createTrackbar('lowerv', 'trackbar', 0, 255, nothing)
@@ -70,7 +70,7 @@ while True:
         if switch == 1:
             pad = cv2.line(pad, (x1,y1), (x2,y2), (0, 0, 255) , 3)
         else:
-            pad = cv2.circle(pad, (x2, y2), 50, (255, 255, 255), -1)
+            pad = cv2.circle(pad, (x2, y2), 15, (255, 255, 255), -1)
 
     x1,y1 = x2,y2
 
